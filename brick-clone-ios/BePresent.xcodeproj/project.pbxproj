@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E1D158A61F18BE8E9689EF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C9B08635C55B0B88AB4E10 /* Assets.xcassets */; };
+		26906038115B962FA38C9A37 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2000BDF05C8E0054AC09C1BA /* ManagedSettings.framework */; };
+		6188D1C7690456D8ACF42FB2 /* NFCScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39757D935EB11050044046A3 /* NFCScanner.swift */; };
+		739A9988A7A90E6463D4E5A4 /* FocusSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F86CDD563C821458AFB9BE /* FocusSessionTests.swift */; };
+		8C707DCCCC2A21C43EA1AC10 /* FocusSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE40CE6BBA6B6248589D4C48 /* FocusSession.swift */; };
+		9AB371CB737178768D51E74D /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFDC65EFC5532BFB93370E8 /* CoreNFC.framework */; };
+		BA73FDF679FBD71CF8F898C7 /* BePresentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655ECA02E01156933CF82B5C /* BePresentApp.swift */; };
+		D175986CBB73D325D4BB5FB6 /* FamilyControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4239CF73C7CA9D69F53E82CE /* FamilyControls.framework */; };
+		FF48182D9E18EACB42F866EF /* FocusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F9D5134A7AD10D764A93CE /* FocusController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6161D548B7D404FC90415D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4B20451E36DD522335F58A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72C4BCE41E2B66F3579D42A0;
+			remoteInfo = BePresent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		097F6A41109F772EDAA3707C /* BePresent.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BePresent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2000BDF05C8E0054AC09C1BA /* ManagedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettings.framework; path = System/Library/Frameworks/ManagedSettings.framework; sourceTree = SDKROOT; };
+		314E5AAFA1C17FEE4FD36CD9 /* BePresentTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BePresentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C9B08635C55B0B88AB4E10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39757D935EB11050044046A3 /* NFCScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCScanner.swift; sourceTree = "<group>"; };
+		4239CF73C7CA9D69F53E82CE /* FamilyControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FamilyControls.framework; path = System/Library/Frameworks/FamilyControls.framework; sourceTree = SDKROOT; };
+		655ECA02E01156933CF82B5C /* BePresentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BePresentApp.swift; sourceTree = "<group>"; };
+		7CBA87D0B85CAC7C3A1D8D55 /* BePresent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BePresent.entitlements; sourceTree = "<group>"; };
+		7DEB1944B1B81D460C3423DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7EFDC65EFC5532BFB93370E8 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		AE40CE6BBA6B6248589D4C48 /* FocusSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSession.swift; sourceTree = "<group>"; };
+		E0F86CDD563C821458AFB9BE /* FocusSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSessionTests.swift; sourceTree = "<group>"; };
+		E9F9D5134A7AD10D764A93CE /* FocusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7DF4C4A7F06B5352CCD7B68C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D175986CBB73D325D4BB5FB6 /* FamilyControls.framework in Frameworks */,
+				26906038115B962FA38C9A37 /* ManagedSettings.framework in Frameworks */,
+				9AB371CB737178768D51E74D /* CoreNFC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70F7A9A57DCEA4BFECF89B0B /* BePresentTests */ = {
+			isa = PBXGroup;
+			children = (
+				E0F86CDD563C821458AFB9BE /* FocusSessionTests.swift */,
+			);
+			path = BePresentTests;
+			sourceTree = "<group>";
+		};
+		752CA314000D44C4B40BB6AD /* BePresent */ = {
+			isa = PBXGroup;
+			children = (
+				33C9B08635C55B0B88AB4E10 /* Assets.xcassets */,
+				7CBA87D0B85CAC7C3A1D8D55 /* BePresent.entitlements */,
+				655ECA02E01156933CF82B5C /* BePresentApp.swift */,
+				E9F9D5134A7AD10D764A93CE /* FocusController.swift */,
+				AE40CE6BBA6B6248589D4C48 /* FocusSession.swift */,
+				7DEB1944B1B81D460C3423DA /* Info.plist */,
+				39757D935EB11050044046A3 /* NFCScanner.swift */,
+			);
+			path = BePresent;
+			sourceTree = "<group>";
+		};
+		DE95A6046B48EA9924C95B01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EFDC65EFC5532BFB93370E8 /* CoreNFC.framework */,
+				4239CF73C7CA9D69F53E82CE /* FamilyControls.framework */,
+				2000BDF05C8E0054AC09C1BA /* ManagedSettings.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F052C91A8FEB4E7187B3D573 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				097F6A41109F772EDAA3707C /* BePresent.app */,
+				314E5AAFA1C17FEE4FD36CD9 /* BePresentTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7287540348592229ACBE28D = {
+			isa = PBXGroup;
+			children = (
+				752CA314000D44C4B40BB6AD /* BePresent */,
+				70F7A9A57DCEA4BFECF89B0B /* BePresentTests */,
+				DE95A6046B48EA9924C95B01 /* Frameworks */,
+				F052C91A8FEB4E7187B3D573 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72C4BCE41E2B66F3579D42A0 /* BePresent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62D014A7C79586079AC38D87 /* Build configuration list for PBXNativeTarget "BePresent" */;
+			buildPhases = (
+				C8883C2C05B585BBB011AA7A /* Sources */,
+				6E8640CE643AAA71FC537161 /* Resources */,
+				7DF4C4A7F06B5352CCD7B68C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BePresent;
+			packageProductDependencies = (
+			);
+			productName = BePresent;
+			productReference = 097F6A41109F772EDAA3707C /* BePresent.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E76F3C7A08638EE9E4192007 /* BePresentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B83C1F0689BC4E467268D5A3 /* Build configuration list for PBXNativeTarget "BePresentTests" */;
+			buildPhases = (
+				2CA2B5A5457EF4F979AF7322 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA2595F90F94D665CE8DDE77 /* PBXTargetDependency */,
+			);
+			name = BePresentTests;
+			packageProductDependencies = (
+			);
+			productName = BePresentTests;
+			productReference = 314E5AAFA1C17FEE4FD36CD9 /* BePresentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4B20451E36DD522335F58A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 51FF3CCB68EB72B3B8487E33 /* Build configuration list for PBXProject "BePresent" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F7287540348592229ACBE28D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72C4BCE41E2B66F3579D42A0 /* BePresent */,
+				E76F3C7A08638EE9E4192007 /* BePresentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E8640CE643AAA71FC537161 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E1D158A61F18BE8E9689EF1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CA2B5A5457EF4F979AF7322 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				739A9988A7A90E6463D4E5A4 /* FocusSessionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8883C2C05B585BBB011AA7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA73FDF679FBD71CF8F898C7 /* BePresentApp.swift in Sources */,
+				FF48182D9E18EACB42F866EF /* FocusController.swift in Sources */,
+				8C707DCCCC2A21C43EA1AC10 /* FocusSession.swift in Sources */,
+				6188D1C7690456D8ACF42FB2 /* NFCScanner.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA2595F90F94D665CE8DDE77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72C4BCE41E2B66F3579D42A0 /* BePresent */;
+			targetProxy = B6161D548B7D404FC90415D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3955FEBE0D1F7F3E4A7371A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bepresent.BePresentTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BePresent.app/BePresent";
+			};
+			name = Debug;
+		};
+		4084F7D420C751D3D64DACD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BePresent/BePresent.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = BePresent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bepresent.brick;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		449126AA714E15B9F2BBE8DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BePresent/BePresent.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = BePresent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bepresent.brick;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F14589FDB4C010E3B835380 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		55FB987AC7400D34D5832FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D01B3DD62941043689882B4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bepresent.BePresentTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BePresent.app/BePresent";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		51FF3CCB68EB72B3B8487E33 /* Build configuration list for PBXProject "BePresent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55FB987AC7400D34D5832FA8 /* Debug */,
+				4F14589FDB4C010E3B835380 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		62D014A7C79586079AC38D87 /* Build configuration list for PBXNativeTarget "BePresent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				449126AA714E15B9F2BBE8DB /* Debug */,
+				4084F7D420C751D3D64DACD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B83C1F0689BC4E467268D5A3 /* Build configuration list for PBXNativeTarget "BePresentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3955FEBE0D1F7F3E4A7371A9 /* Debug */,
+				D01B3DD62941043689882B4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4B20451E36DD522335F58A6 /* Project object */;
+}
