@@ -7,7 +7,10 @@ final class NFCScanner: NSObject, NFCTagReaderSessionDelegate {
     private var completion: ((Result<String, Error>) -> Void)?
 
     func scan(completion: @escaping (Result<String, Error>) -> Void) {
-        guard session == nil else { return }
+        guard session == nil else {
+            completion(.failure(ReaderError.busy))
+            return
+        }
         guard NFCTagReaderSession.readingAvailable else {
             completion(.failure(ReaderError.unavailable))
             return
@@ -62,9 +65,10 @@ final class NFCScanner: NSObject, NFCTagReaderSessionDelegate {
     }
 
     enum ReaderError: LocalizedError {
-        case unavailable, unsupported
+        case unavailable, unsupported, busy
         var errorDescription: String? {
             switch self {
+            case .busy: return "The previous scan is finishing. Please try again in a moment."
             case .unavailable: return "NFC scanning requires a compatible physical iPhone. It isn’t available in the simulator."
             case .unsupported: return "Use a compatible MIFARE tag, such as NTAG213/215/216, or an ISO 15693 tag."
             }
