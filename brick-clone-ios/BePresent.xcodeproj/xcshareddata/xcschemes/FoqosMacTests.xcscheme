@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1610"
+   LastUpgradeVersion = "2640"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -9,15 +9,15 @@
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "801B20942CB363A10073E9E2"
-               BuildableName = "foqos.app"
-               BlueprintName = "foqos"
+               BlueprintIdentifier = "F0C100082FA0000100000001"
+               BuildableName = "FoqosMacTests.xctest"
+               BlueprintName = "FoqosMacTests"
                ReferencedContainer = "container:BePresent.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,21 +27,19 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO"
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "801B20A52CB363A20073E9E2"
-               BuildableName = "foqosTests.xctest"
-               BlueprintName = "foqosTests"
+               BlueprintIdentifier = "F0C100082FA0000100000001"
+               BuildableName = "FoqosMacTests.xctest"
+               BlueprintName = "FoqosMacTests"
                ReferencedContainer = "container:BePresent.xcodeproj">
             </BuildableReference>
          </TestableReference>
-
       </Testables>
    </TestAction>
    <LaunchAction
@@ -52,19 +50,7 @@
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
-      debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "801B20942CB363A10073E9E2"
-            BuildableName = "foqos.app"
-            BlueprintName = "foqos"
-            ReferencedContainer = "container:BePresent.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-
+      debugServiceExtension = "internal">
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -72,16 +58,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "801B20942CB363A10073E9E2"
-            BuildableName = "foqos.app"
-            BlueprintName = "foqos"
-            ReferencedContainer = "container:BePresent.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
