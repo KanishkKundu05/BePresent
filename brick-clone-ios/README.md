@@ -1,44 +1,37 @@
 # BePresent
 
-A minimal native SwiftUI iPhone app, styled in BePresent blue and white. Requires iOS 17 or later. Two screens: a local welcome/login entry with no account or backend, and a home screen. App selection uses Apple's system Screen Time picker.
+BePresent uses the [Foqos](https://github.com/awaseem/foqos) app foundation with white-on-blue BePresent branding. See [UPSTREAM.md](UPSTREAM.md) for the imported revision and [LICENSE](LICENSE) for the original MIT license.
 
 ## Run
 
-Open `BePresent.xcodeproj`, select the **BePresent** scheme, and choose your development team under Signing & Capabilities. Set a unique bundle identifier if needed. Run on a physical NFC-capable iPhone for the complete flow.
+Open `BePresent.xcodeproj`, select the **BePresent** scheme, and run on an iPhone simulator or signed physical iPhone. The upstream internal iOS target/module is still named `foqos`; the installed app is named **BePresent**. Use Xcode 26 or newer. The main app targets iOS 17.6; individual extensions retain upstream minimum versions through iOS 18.5.
 
-The project includes Family Controls and NFC Tag Reading entitlements. Your signing profile must support both capabilities. Apple approval for Family Controls distribution is required before distributing through TestFlight or the App Store. No development team or credentials are committed.
+For a physical device, choose your development team for the app and its four iOS extension targets. Configure Family Controls, NFC, and the shared App Group `group.com.bepresent.brick`. All bundle IDs use `com.bepresent.brick`. Distribution requires Apple's Family Controls entitlement approval. No upstream signing team is configured.
 
-The checked-in project can be regenerated with `xcodegen generate` using `project.yml`.
+## Included functionality
 
-## Flow
+- Blocking profiles, app/category/domain selection, allow mode, strict physical unlock rules.
+- NFC, QR/barcode, manual, timer, pause-timer, and temporary-access strategies.
+- Scheduled sessions, breaks, persisted session history, and insights.
+- Device Activity monitor, shield configuration/action extensions, widgets, Live Activities, and App Intents.
+- Upstream model, timer, break, temporary-access, persistence, and regression tests.
 
-1. Tap **Get started**. This stores a local entry flag; it is not authentication.
-2. Enable Screen Time access and approve Apple's individual authorization prompt.
-3. Choose apps, categories, and/or websites under **Your distractions**.
-4. Tap **Scan to be present**, then hold the top of your iPhone against a compatible NFC tag. The first successful scan pairs its identifier and starts blocking.
-5. Tap **Scan to unlock** and scan the same tag to remove the shields. Other tags are rejected. App selection cannot be edited during a session.
+The SwiftData models and blocking engine are retained from upstream. The old two-screen prototype has been replaced. End any active prototype session before updating; prototype preferences and pairing are not migrated.
 
-The pairing, selection, and session start time persist locally. Shields use a named Managed Settings store and are reapplied when the app becomes active with authorization. Cancelled or failed scans do not toggle the session. There is no in-app manual unlock or pairing reset.
+## Links and branding
 
-## Hardware and platform limits
+BePresent uses `bepresent:///profile/<UUID>` and `bepresent:///navigate/<UUID>` links for QR codes, NFC payloads, and widgets. It does not claim the upstream `foqos.app` associated domain. Foreground NFC scanning remains available; background NFC opening requires a separately configured HTTPS universal-link domain and is not promised by this custom scheme.
 
-- Supports readable MIFARE tags (e.g. NTAG213/215/216) and ISO 15693 tags. No NDEF payload or tag programming is needed. Proprietary Brick hardware compatibility is **not verified**; this implementation uses standard NFC tags rather than Brick's private protocol.
-- Core NFC requires the app's foreground, user-initiated scan sheet. Touching a tag while the app is closed does not automatically toggle blocking.
-- Screen Time shields selected apps/categories/websites, not the entire phone. System-required functionality remains available. Uses Apple's default shield UI.
-- Individual authorization can be revoked in iOS Settings, and the user can uninstall the app. This is a voluntary focus tool, not a tamper-proof lock. If access is revoked, the home screen requests access again rather than claiming shields are active.
-- Pairing uses a tag identifier, not cryptographic authentication. Cloned identifiers and tags with changing identifiers are outside this prototype's guarantees.
-- Losing the paired tag leaves no in-app unlock path. OS-level authorization controls remain available.
-- The simulator can display the UI and run policy tests, but cannot validate NFC reads or real Screen Time enforcement.
+The app icon, onboarding, header, shields, accent color, app name, and About screen use BePresent branding. Upstream copyright notices and internal source/type names remain for attribution and easier upstream updates. The inherited macOS sources are retained for project completeness but are not part of iOS validation.
 
 ## Validation
 
-Run the `BePresentTests` target in Xcode (Product → Test). Tests cover first-scan pairing, matching-tag unlock, wrong-tag rejection both during and after a session, missing-selection/empty-tag rejection, and persistence round trips.
+Run Product → Test with the BePresent scheme, or:
 
-Before shipping, verify on a signed physical iPhone: allow/deny/revoke authorization, choose an app and a website, start a session, confirm both shields, relaunch while blocked, reject a different tag, cancel a scan, and unlock with the original tag. Also test category selection and NFC timeout behavior.
+```sh
+xcodebuild test -project BePresent.xcodeproj -scheme BePresent -destination 'platform=iOS Simulator,name=iPhone 17' CODE_SIGNING_ALLOWED=NO
+```
 
-## Apple references
+A signed physical device is required to verify NFC reads/writes, Screen Time enforcement, scheduling, shields, and cross-process App Group behavior. Simulator tests validate model and policy logic, not real device enforcement.
 
-- [Individual Screen Time authorization](https://developer.apple.com/documentation/familycontrols/authorizationcenter/requestauthorization(for:))
-- [Family Controls entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.family-controls)
-- [NFC polling options](https://developer.apple.com/documentation/corenfc/nfctagreadersession/pollingoption)
-- [Managed Settings category shields](https://developer.apple.com/documentation/managedsettings/shieldsettings/applicationcategories-swift.property)
+The two STL files are the BePresent hardware models and are independent of the app sources.
