@@ -1,0 +1,190 @@
+import SwiftUI
+
+struct HomeProfilesListView: View {
+  let profiles: [BlockedProfiles]
+  let isBlocking: Bool
+  let activeSessionProfileId: UUID?
+  let elapsedTime: TimeInterval
+  let isPauseActive: Bool
+  let onManageTapped: () -> Void
+  let onStartTapped: (BlockedProfiles) -> Void
+  let onStopTapped: (BlockedProfiles) -> Void
+  let onEditTapped: (BlockedProfiles) -> Void
+  let onStatsTapped: (BlockedProfiles) -> Void
+  var selectedProfileId: UUID? = nil
+  var onSelectProfile: ((BlockedProfiles) -> Void)? = nil
+
+  var body: some View {
+    VStack(alignment: .leading, spacing: 10) {
+      SectionTitle(
+        "Profiles",
+        buttonText: "Manage",
+        buttonAction: onManageTapped,
+        buttonIcon: "brain.head.profile"
+      )
+
+      VStack(spacing: 0) {
+        ForEach(Array(profiles.enumerated()), id: \.element.id) { index, profile in
+          HomeProfileRow(
+            profile: profile,
+            isBlocking: isBlocking,
+            isActive: profile.id == activeSessionProfileId,
+            elapsedTime: elapsedTime,
+            isPauseActive: isPauseActive,
+            isSelected: profile.id == selectedProfileId,
+            selectsInsights: onSelectProfile != nil,
+            onSelected: {
+              onSelectProfile?(profile)
+            },
+            onStartTapped: {
+              onStartTapped(profile)
+            },
+            onStopTapped: {
+              onStopTapped(profile)
+            },
+            onEditTapped: {
+              onEditTapped(profile)
+            },
+            onStatsTapped: {
+              onStatsTapped(profile)
+            }
+          )
+
+          if index < profiles.count - 1 {
+            Divider()
+              .padding(.leading, 64)
+          }
+        }
+      }
+      .background(
+        Color(.systemBackground),
+        in: RoundedRectangle(cornerRadius: 20, style: .continuous)
+      )
+      .overlay(
+        RoundedRectangle(cornerRadius: 20, style: .continuous)
+          .strokeBorder(Color.primary.opacity(0.1), lineWidth: 1)
+      )
+    }
+  }
+}
+
+private struct HomeProfileRow: View {
+  @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+  @EnvironmentObject private var themeManager: ThemeManager
+  @State private var hasRoomForMiniChart = false
+
+  let profile: BlockedProfiles
+  let isBlocking: Bool
+  let isActive: Bool
+  let elapsedTime: TimeInterval
+  let isPauseActive: Bool
+  let isSelected: Bool
+  let selectsInsights: Bool
+  let onSelected: () -> Void
+  let onStartTapped: () -> Void
+  let onStopTapped: () -> Void
+  let onEditTapped: () -> Void
+  let onStatsTapped: () -> Void
+
+  private var showsMiniChart: Bool {
+    hasRoomForMiniChart && !dynamicTypeSize.isAccessibilitySize
+  }
+
+  private var canStart: Bool {
+    !isBlocking
+  }
+
+  private var canStop: Bool {
+    profile.showStopButton(elapsedTime: elapsedTime)
+  }
+
+  private var blockingStrategy: BlockingStrategy? {
+    guard let strategyId = profile.blockingStrategyId else { return nil }
+    return StrategyManager.getStrategyFromId(id: strategyId)
+  }
+
+  private var activeAction: BlockingStrategySessionAction {
+    blockingStrategy?.activeSessionAction(
+      isPauseActive: isPauseActive,
+      isEnabled: canStop
+    ) ?? .stop(isEnabled: canStop)
+  }
+
+  var body: some View {
+    HStack(spacing: 12) {
+      Button(action: selectsInsights ? onSelected : onEditTapped) {
+        ProfileSummaryContent(
+          profile: profile,
+          isActive: false,
+          metadata: .appsAndDomains,
+          showsStatusLine: true,
+          layout: .dashboard,
+          statusMode: .scheduleOnly
+        )
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .contentShape(Rectangle())
+      }
+      .buttonStyle(.plain)
+      .accessibilityLabel(
+        selectsInsights ? "Show \(profile.name) insights" : "Edit \(profile.name)"
+      )
+      .accessibilityAddTraits(isSelected ? [.isSelected] : [])
+
+      if showsMiniChart {
+        Button(action: onStatsTapped) {
+          ProfileUsageMiniBarChart(profile: profile)
+            .frame(width: 118, height: 62)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Show \(profile.name) insights")
+      }
+
+      actionMenu
+    }
+    .padding(16)
+    .frame(maxWidth: .infinity)
+    .background(
+      isSelected ? themeManager.themeColor.opacity(0.4) : Color.clear,
+      in: RoundedRectangle(cornerRadius: 16, style: .continuous)
+    )
+    .onGeometryChange(for: Bool.self) { geometry in
+      // Reserve room for profile details, the chart, the action menu, and padding.
+      geometry.size.width > 343
+    } action: { hasRoom in
+      hasRoomForMiniChart = hasRoom
+    }
+  }
+
+  private var actionMenu: some View {
+    Menu {
+
+      Button(action: onStatsTapped) {
+        Label("Insights", systemImage: "chart.line.uptrend.xyaxis")
+      }
+
+      Button(action: onEditTapped) {
+        Label("Edit", systemImage: "pencil")
+      }
+
+      if isActive {
+        Button(action: onStopTapped) {
+          Label(activeAction.title, systemImage: activeAction.systemImageName)
+        }
+        .disabled(!canStop)
+      } else {
+        Button(action: onStartTapped) {
+          Label("Start", systemImage: "play.fill")
+        }
+        .disabled(!canStart)
+      }
+    } label: {
+      Image(systemName: "ellipsis")
+        .font(.system(size: 16, weight: .semibold))
+        .foregroundStyle(.gray)
+        .frame(width: 32, height: 44)
+        .contentShape(Rectangle())
+    }
+    .accessibilityLabel("More actions for \(profile.name)")
+  }
+}
