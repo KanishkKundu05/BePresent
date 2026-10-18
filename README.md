@@ -3,3 +3,7 @@
 
 ### V1 physical brick
 ![V1 of the physical brick experiment: two 3D-printed enclosure pieces, one with BEPRESENT lettering](assets/physical-brick-v1.png)
+
+### V2 physical brick
+
+![V2 of the physical brick experiment](assets/physical-brick-v2.jpg)
